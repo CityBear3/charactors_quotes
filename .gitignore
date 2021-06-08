@@ -1,0 +1,6 @@
+/target
+Cargo.lock
+server.log
+diesel.toml
+docker-compose.yml
+.env
