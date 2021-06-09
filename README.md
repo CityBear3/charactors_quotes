@@ -22,4 +22,40 @@ diesel migration run
 ```
 cargo run --release
 ```
-
+## 使用方法(HTTPieを想定しています)
+- 登録をする
+```
+http POST localhost:8080/charactors name="hoge" title="fuga" quote="顧客が本当に必要だったもの"
+```
+- 参照(複数)
+```
+http GET localhost:8080/charactors
+```
+- 参照(一件、id検索)
+```
+http GET localhost:8080/charactors/id search:="number"
+```
+- 参照(一件、名前検索)
+```
+http GET localhost:8080/charactors/names search="hoge"
+```
+- 参照(一件、タイトル検索)
+```
+http GET localhost:8080/charactors/titles search="fuga"
+```
+- 更新
+```
+http PUT localhost:8080/charactors id:="number" name="hogehoge" title="fugafuga" quote="バグは夜更け過ぎに仕様に変わるだろう"
+```
+- 削除
+```
+http DELETE localhost:8080/charactors search:="number"
+```
+- 名前一覧
+```
+http GET localhost:8080/charactors/names/list
+```
+- タイトル一覧
+```
+http GET localhost:8080/charactors/titles/list
+```
