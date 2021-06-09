@@ -14,12 +14,10 @@
 ```
 DATABASE_URL=postres://"user":"password"@localhost:"port"/"database"
 ```
-<br>
 2. マイグレーションを実行する
 ```
 diesel migration run
 ```
-<br>
 3. サーバーを起動する
 ```
 cargo run --release
