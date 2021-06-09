@@ -19,5 +19,9 @@ DATABASE_URL=postres://"user":"password"@localhost:"port"/"database"
 ```
 diesel migration run
 ```
-
+<br>
+3. サーバーを起動する
+```
+cargo run --release
+```
 
