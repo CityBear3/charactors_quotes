@@ -35,19 +35,19 @@ async fn view_names() -> Result<HttpResponse, ApiError> {
     Ok(HttpResponse::Ok().json(names))
 }
 
-#[get("charactors/id")]
+#[post("charactors/id")]
 async fn search_by_id(id: web::Json<Req<i32>>) -> Result<HttpResponse, ApiError> {
     let charactor = Charactors::search_by_id(id.into_inner().search)?;
     Ok(HttpResponse::Ok().json(charactor))
 }
 
-#[get("charactors/names")]
+#[post("charactors/names")]
 async fn search_by_name(name: web::Json<Req<String>>) -> Result<HttpResponse, ApiError> {
     let charactors = Charactors::search_by_name(name.into_inner().search)?;
     Ok(HttpResponse::Ok().json(charactors))
 }
 
-#[get("charactors/titles")]
+#[post("charactors/titles")]
 async fn search_by_title(title: web::Json<Req<String>>) -> Result<HttpResponse, ApiError> {
     let charactors = Charactors::seach_by_title(title.into_inner().search)?;
     Ok(HttpResponse::Ok().json(charactors))
